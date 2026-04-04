@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./Intro.css";
 import Vector1 from "../../img/Vector1.png";
 import Vector2 from "../../img/Vector2.png";
@@ -39,16 +39,16 @@ const Intro = () => {
         </Link>
         {/* social icons */}
         <div className="i-icons">
-          <img src={Github} alt="" />
-          <img src={LinkedIn} alt="" />
-          <img src={Instagram} alt="" />
+          <img src={Github} alt="GitHub" />
+          <img src={LinkedIn} alt="LinkedIn" />
+          <img src={Instagram} alt="Instagram" />
         </div>
       </div>
       {/* right image side */}
       <div className="i-right">
-        <img src={Vector1} alt="" />
-        <img src={Vector2} alt="" />
-        <img src={boy} alt="" />
+        <img src={Vector1} alt="" aria-hidden="true" />
+        <img src={Vector2} alt="" aria-hidden="true" />
+        <img src={boy} alt="Andrew Thomas" />
         {/* animation */}
         <motion.img
           initial={{ left: "-36%" }}
@@ -56,6 +56,7 @@ const Intro = () => {
           transition={transition}
           src={glassesimoji}
           alt=""
+          aria-hidden="true"
         />
 
         <motion.div

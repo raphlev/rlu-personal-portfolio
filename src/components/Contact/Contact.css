@@ -42,6 +42,21 @@ textarea{
     left: 8rem;
 }
 
+.success-msg {
+    color: green;
+    font-size: 0.9rem;
+}
+
+.error-msg {
+    color: red;
+    font-size: 0.9rem;
+}
+
+input[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 @media screen and (max-width: 480px) {
     .contact-form{
         padding: 0;
