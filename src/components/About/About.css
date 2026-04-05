@@ -1,0 +1,102 @@
+.about {
+  display: flex;
+  gap: 4rem;
+  padding: 4rem 0;
+  align-items: flex-start;
+}
+
+.about-left {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.about-bio {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray);
+  margin: 0;
+}
+
+.about-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.lang-badge {
+  background: var(--blueCard);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 13px;
+  color: var(--black);
+}
+
+.lang-badge em {
+  font-style: normal;
+  color: var(--orange);
+}
+
+/* right — education */
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+}
+
+.about-edu-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.edu-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  box-shadow: var(--boxShadow);
+  border-left: 4px solid var(--orange);
+}
+
+.edu-year {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--orange);
+  letter-spacing: 0.5px;
+}
+
+.edu-school {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.edu-degree {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+.about-blur {
+  width: 18rem;
+  height: 10rem;
+  bottom: -2rem;
+  right: -4rem;
+}
+
+@media screen and (max-width: 480px) {
+  .about {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  .about-right {
+    width: 100%;
+  }
+}

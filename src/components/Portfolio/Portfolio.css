@@ -1,40 +1,127 @@
 .portfolio {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  height: 70vh;
-
+  gap: 1.5rem;
+  padding: 4rem 0;
 }
-/* heading */
-.portfolio span:nth-of-type(1) {
+
+.portfolio > span:nth-of-type(1) {
   color: var(--black);
   font-size: 2rem;
   font-weight: bold;
 }
 
-.portfolio span:nth-of-type(2) {
+.portfolio > span:nth-of-type(2) {
   color: var(--orange);
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-/* slider */
-.portfolio .swiper{
-    overflow: visible!important;
-}
-
-.portfolio-slider {
-  margin-top: 3rem;
+/* Career slider */
+.career-slider {
   width: 100%;
+  overflow: visible !important;
+  padding: 1rem 0 3.5rem !important;
 }
 
-.portfolio-slider .swiper-slide {
-  width: 20rem;
-}
-.portfolio img {
-  width: 19rem;
-  filter: drop-shadow(-12px 15px 13px rgba(0, 0, 0, 0.25));
-  border-radius: 19px;
+.career-slider .swiper-button-next,
+.career-slider .swiper-button-prev {
+  color: var(--orange);
 }
 
+.career-slider .swiper-pagination-bullet-active {
+  background: var(--orange);
+}
+
+/* Career card */
+.career-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--boxShadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-height: 320px;
+  border-top: 4px solid var(--orange);
+}
+
+.career-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.career-period {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--orange);
+  letter-spacing: 0.4px;
+}
+
+.career-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.career-tag {
+  background: var(--blueCard);
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 11px;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.career-company {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.3;
+}
+
+.career-role {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.career-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0.3rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.career-highlights li {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.5;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.career-highlights li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio {
+    padding: 2rem 0;
+  }
+  .career-card {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+}

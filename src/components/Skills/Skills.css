@@ -1,0 +1,160 @@
+.skills-section {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* heading */
+.skills-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.skills-heading > :nth-child(1) {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.skills-heading > :nth-child(2) {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--orange);
+}
+
+/* two-column body */
+.skills-body {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* left — skill groups */
+.skills-left {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-group-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-pill {
+  background: var(--blueCard);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 12.5px;
+  color: var(--black);
+}
+
+/* LinkedIn assessed pills */
+.assessed-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+.assessed-label {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.assessed-pill {
+  background: #e6f4ea !important;
+  color: #2e7d32 !important;
+  font-weight: 600;
+}
+
+/* right — certifications */
+.skills-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+}
+
+.certs-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.cert-card {
+  display: flex;
+  align-items: stretch;
+  border-radius: 14px;
+  box-shadow: var(--smboxShadow);
+  overflow: hidden;
+  background: white;
+}
+
+.cert-accent {
+  width: 6px;
+  flex-shrink: 0;
+}
+
+.cert-body {
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cert-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1.4;
+}
+
+.cert-meta {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.skills-blur {
+  width: 16rem;
+  height: 8rem;
+  bottom: -2rem;
+  right: -3rem;
+}
+
+@media screen and (max-width: 480px) {
+  .skills-section {
+    padding: 2rem 0;
+  }
+  .skills-body {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .skills-heading > :nth-child(1) {
+    font-size: 1.5rem;
+  }
+  .skills-heading > :nth-child(2) {
+    font-size: 2rem;
+  }
+}
