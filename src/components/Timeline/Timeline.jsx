@@ -40,10 +40,12 @@ const timelineData = [
     tags: ["PLM", "A&D", "Automotive", "Retail", "Luxury", "Shipbuilding"],
     highlights: [
       "PLM Technical Architect for Thales, Airbus, Safran, Volvo, Ferrari, SNCF, Richemont, Hasbro, MBDA, Navantia and 20+ others",
-      "Subject-matter expert: CAD Integration — member of CATIA BOCA team with PTC R&D",
+      "Subject-matter expert: CAD Integration (CATIA BOCA team with R&D), Architecture Design, PLM Solution Design and LSA (S3000L)",
+      "Development Technical Lead managing teams of 1 to 5 developers across concurrent deliveries",
+      "Customer-facing workshops for requirements analysis and solution design reviews",
+      "Trusted advisor for Kingfisher — Windchill REST interface with SAP (integration architecture)",
       "'Customer First' award on Thales delivery: quality, precision, reactivity & dev team management",
-      "Architecture design (on-premise & cloud), LDAP/SSO, Windchill cluster, replica environments",
-      "Development lead managing teams of 1–5 developers · Training sessions in Australia for Thales",
+      "Conducted training sessions for customers in Australia (Thales)",
     ],
   },
   {
