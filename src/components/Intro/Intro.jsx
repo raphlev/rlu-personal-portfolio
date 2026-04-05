@@ -37,7 +37,7 @@ const Intro = () => {
         </div>
         <div className="i-current-focus" style={{ color: darkMode ? "white" : "var(--black)" }}>
           <span className="i-focus-badge">Currently upskilling</span>
-          &nbsp;AWS Cloud Architecture · AI-driven dev with Claude&nbsp;Code, Kiro &amp; Cidex
+          &nbsp;AWS Cloud Architecture · AI-driven dev with Claude&nbsp;Code, Kiro &amp; Codex
         </div>
         <Link to="contact" smooth={true} spy={true}>
           <button className="button i-button">Get in Touch</button>

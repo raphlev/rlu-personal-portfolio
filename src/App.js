@@ -1,15 +1,16 @@
 import Navbar from "./components/Navbar/Navbar";
 import Intro from "./components/Intro/Intro";
-import About from "./components/About/About";
 import Services from "./components/Services/Services";
-import "./App.css";
 import Experience from "./components/Experience/Experience";
+import About from "./components/About/About";
 import Works from "./components/Works/Works";
 import Portfolio from "./components/Portfolio/Portfolio";
+import Timeline from "./components/Timeline/Timeline";
 import Skills from "./components/Skills/Skills";
 import Testimonial from "./components/Testimonials/Testimonial";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import "./App.css";
 import { useContext } from "react";
 import { themeContext } from "./Context";
 
@@ -20,17 +21,18 @@ function App() {
     <div
       className="App"
       style={{
-        background: darkMode ? "black" : "",
+        background: darkMode ? "#111" : "",
         color: darkMode ? "white" : "",
       }}
     >
       <Navbar />
       <Intro />
-      <About />
       <Services />
       <Experience />
+      <About />
       <Works />
       <Portfolio />
+      <Timeline />
       <Skills />
       <Testimonial />
       <Contact />

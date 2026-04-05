@@ -70,7 +70,7 @@ const Services = () => {
           <Card
             emoji={Humble}
             heading={"AI Development"}
-            detail={"Upskilling with Claude Code · Kiro · Cidex · Prompt Engineering · AI-augmented delivery workflows"}
+            detail={"Upskilling with Claude Code · Kiro · Codex · Prompt Engineering · AI-augmented delivery workflows"}
             color="rgba(252, 166, 31, 0.45)"
           />
         </motion.div>
