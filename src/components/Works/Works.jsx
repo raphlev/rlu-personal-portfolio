@@ -19,23 +19,18 @@ const Works = () => {
       {/* left side */}
       <div className="w-left">
         <div className="awesome">
-          {/* dark Mode */}
           <span style={{ color: darkMode ? "white" : "" }}>
-            Works for All these
+            Trusted by Global
           </span>
-          <span>Brands & Clients</span>
+          <span>Industry Leaders</span>
           <span>
-            Lorem ispum is simpley dummy text of printing of printing Lorem
-            <br />
-            ispum is simpley dummy text of printingLorem ispum is simpley dummy
-            text
-            <br />
-            y dummy text of printingLorem
-            <br />
-            ispum is simpley dummy text of printing
+            Delivering PLM excellence for Airbus, Thales, Safran, Volvo,
+            Richemont, Ferrari, SNCF, Schneider, MBDA and many more —
+            across Aerospace &amp; Defense, Automotive, Retail, Energy,
+            Shipbuilding and beyond.
           </span>
           <Link to="contact" smooth={true} spy={true}>
-            <button className="button s-button">Hire Me</button>
+            <button className="button s-button">Work with Me</button>
           </Link>
           <div
             className="blur s-blur1"

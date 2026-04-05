@@ -23,13 +23,12 @@ const Services = () => {
     <div className="services" id="services">
       {/* left side */}
       <div className="awesome">
-        {/* dark mode */}
-        <span style={{ color: darkMode ? "white" : "" }}>My Awesome</span>
-        <span>services</span>
+        <span style={{ color: darkMode ? "white" : "" }}>My Core</span>
+        <span>Expertise</span>
         <span>
-          Lorem ispum is simpley dummy text of printing of printing Lorem
-          <br />
-          ispum is simpley dummy text of printing
+          25+ years architecting PLM, Cloud and IoT solutions for global
+          industrial leaders — and continuously pushing into AI-driven
+          development.
         </span>
         <a href={Resume} download>
           <button className="button s-button">Download CV</button>
@@ -46,8 +45,8 @@ const Services = () => {
         >
           <Card
             emoji={HeartEmoji}
-            heading={"Design"}
-            detail={"Figma, Sketch, Photoshop, Adobe Illustrator, Adobe xd"}
+            heading={"PLM Architecture"}
+            detail={"Windchill PDMLink · MPMLink · ProjectLink · CAD Integration · Data Migration · Solution Design · Presales"}
           />
         </motion.div>
         {/* second card */}
@@ -58,8 +57,8 @@ const Services = () => {
         >
           <Card
             emoji={Glasses}
-            heading={"Developer"}
-            detail={"Html, Css, JavaScript, React, Nodejs, Express"}
+            heading={"Cloud & IoT"}
+            detail={"AWS Certified Solutions Architect · ThingWorx IIoT · Cloud Hosting · Azure IoT Hub · CI/CD · FinOps"}
           />
         </motion.div>
         {/* 3rd */}
@@ -70,10 +69,8 @@ const Services = () => {
         >
           <Card
             emoji={Humble}
-            heading={"UI/UX"}
-            detail={
-              "Lorem ispum dummy text are usually use in section where we need some random text"
-            }
+            heading={"AI Development"}
+            detail={"Upskilling with Claude Code · Kiro · Cidex · Prompt Engineering · AI-augmented delivery workflows"}
             color="rgba(252, 166, 31, 0.45)"
           />
         </motion.div>

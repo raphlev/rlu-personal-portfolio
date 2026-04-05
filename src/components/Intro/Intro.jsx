@@ -26,16 +26,21 @@ const Intro = () => {
       {/* left name side */}
       <div className="i-left">
         <div className="i-name">
-          {/* yahan change hy darkmode ka */}
-          <span style={{ color: darkMode ? "white" : "" }}>Hy! I Am</span>
-          <span>Andrew Thomas</span>
+          <span style={{ color: darkMode ? "white" : "" }}>Hello, I Am</span>
+          <span>Raphael Leveque</span>
           <span>
-            Frontend Developer with high level of experience in web designing
-            and development, producting the Quality work
+            PLM Windchill Principal Architect with 25+ years driving digital
+            transformation across Aerospace &amp; Defense, Automotive, and
+            Industrial sectors. Bridging PLM, Cloud, IoT — and now AI-driven
+            development.
           </span>
         </div>
+        <div className="i-current-focus" style={{ color: darkMode ? "white" : "var(--black)" }}>
+          <span className="i-focus-badge">Currently upskilling</span>
+          &nbsp;AWS Cloud Architecture · AI-driven dev with Claude&nbsp;Code, Kiro &amp; Cidex
+        </div>
         <Link to="contact" smooth={true} spy={true}>
-          <button className="button i-button">Hire me</button>
+          <button className="button i-button">Get in Touch</button>
         </Link>
         {/* social icons */}
         <div className="i-icons">
