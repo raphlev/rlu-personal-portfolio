@@ -87,7 +87,7 @@
 
 .timeline-card:hover {
   transform: translateX(5px);
-  box-shadow: -5px 10px 40px rgba(252, 166, 31, 0.15);
+  box-shadow: -5px 10px 40px rgba(37, 99, 235, 0.12);
 }
 
 .timeline-meta {
@@ -150,7 +150,7 @@
 }
 
 .timeline-highlights li {
-  font-size: 14px;
+  font-size: 15.5px;
   color: #444;
   line-height: 1.65;
   padding-left: 1.2rem;
@@ -185,7 +185,7 @@
 }
 
 .timeline-sub-text {
-  font-size: 14px;
+  font-size: 15.5px;
   color: #444;
   line-height: 1.65;
   margin: 0;

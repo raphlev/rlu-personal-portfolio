@@ -71,7 +71,7 @@ const Services = () => {
             emoji={Humble}
             heading={"AI Development"}
             detail={"Upskilling with Claude Code · Kiro · Codex · Prompt Engineering · AI-augmented delivery workflows"}
-            color="rgba(252, 166, 31, 0.45)"
+            color="rgba(37, 99, 235, 0.15)"
           />
         </motion.div>
         <div

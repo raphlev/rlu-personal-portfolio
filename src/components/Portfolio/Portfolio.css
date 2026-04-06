@@ -42,7 +42,7 @@
 }
 
 .featured-bullets li {
-  font-size: 14px;
+  font-size: 15.5px;
   color: #444;
   line-height: 1.65;
   padding-left: 1.2rem;
@@ -72,7 +72,7 @@
 
 .featured-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(252, 166, 31, 0.18);
+  box-shadow: 0 24px 48px rgba(37, 99, 235, 0.18);
 }
 
 .featured-icon {
@@ -106,7 +106,7 @@
 }
 
 .featured-achievement {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--gray);
   line-height: 1.65;
   margin: 0;
