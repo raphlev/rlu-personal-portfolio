@@ -1,39 +1,37 @@
 import Toggle from "../Toggle/Toggle";
 import "./Navbar.css";
 import { Link } from "react-scroll";
+import { usePortfolio } from "../../hooks/usePortfolio";
 
 const Navbar = () => {
+  const portfolio = usePortfolio();
+  const nav = portfolio?.navbar;
+  const name = nav?.kv?.name ?? 'Raphael Leveque';
+  const contactLabel = nav?.kv?.contactLabel ?? 'Contact';
+
+  const links = (nav?.subsections?.links?.bullets ?? []).map(b => {
+    const sep = b.indexOf(' → ');
+    return sep === -1 ? { label: b, to: b } : { label: b.slice(0, sep), to: b.slice(sep + 3) };
+  });
+
   return (
     <div className="n-wrapper" id="Navbar">
       <div className="n-left">
-        <div className="n-name">Raphael Leveque</div>
+        <div className="n-name">{name}</div>
         <Toggle />
       </div>
       <div className="n-right">
         <div className="n-list">
           <ul style={{ listStyleType: "none" }}>
-            <li>
-              <Link activeClass="active" to="Navbar" spy smooth>Home</Link>
-            </li>
-            <li>
-              <Link to="services" spy smooth>Expertise</Link>
-            </li>
-            <li>
-              <Link to="about" spy smooth>About</Link>
-            </li>
-            <li>
-              <Link to="portfolio" spy smooth>Engagements</Link>
-            </li>
-            <li>
-              <Link to="career" spy smooth>Career</Link>
-            </li>
-            <li>
-              <Link to="skills" spy smooth>Skills</Link>
-            </li>
+            {links.map((l, i) => (
+              <li key={i}>
+                <Link activeClass="active" to={l.to} spy smooth>{l.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <Link to="contact" spy smooth>
-          <button className="button n-button">Contact</button>
+          <button className="button n-button">{contactLabel}</button>
         </Link>
       </div>
     </div>

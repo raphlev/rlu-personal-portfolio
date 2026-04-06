@@ -2,106 +2,33 @@ import { useContext } from "react";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import "./Skills.css";
-
-const skillGroups = [
-  {
-    label: "PLM & Architecture",
-    accent: "#DDF8FE",
-    accentDark: "#0e3a4a",
-    skills: [
-      "Windchill PDMLink", "MPMLink", "ProjectLink",
-      "SmarTeam", "ENOVIA", "CAD Integration",
-      "CATIA", "Creo Parametric", "Codebeamer",
-      "Data Migration", "Solution Architecture", "ALM / PDM",
-    ],
-  },
-  {
-    label: "Cloud & IoT",
-    accent: "#fff3d4",
-    accentDark: "#3d2d00",
-    skills: [
-      "AWS EC2 & S3", "AWS CLI", "ThingWorx IIoT",
-      "PTC Vuforia Studio", "Azure IoT Hub",
-      "Cloud Hosting", "CI/CD Pipelines", "FinOps",
-    ],
-  },
-  {
-    label: "Development",
-    accent: "#f0e6ff",
-    accentDark: "#1e0038",
-    skills: [
-      "Java JEE", "JavaScript ✓", "React", "Node.js",
-      "REST APIs ✓", "Git ✓", "Docker", "SVN",
-      "Oracle", "SQL", "MongoDB", "HTML / CSS",
-      "OAuth / SSL", "Bash / KSH",
-    ],
-  },
-  {
-    label: "Industry Knowledge",
-    accent: "#e6f4ea",
-    accentDark: "#0a2e11",
-    skills: [
-      "Requirements Analysis", "Presales & SOW",
-      "Systems Engineering", "Manufacturing Engineering",
-      "Process Engineering", "Change Management",
-      "Aerospace & Defense", "Harness Design",
-      "Agile / Scrum", "Team Leadership",
-    ],
-  },
-  {
-    label: "AI Development",
-    accent: "#fde8d8",
-    accentDark: "#3d1200",
-    note: "Actively upskilling",
-    skills: [
-      "Claude Code", "Kiro", "Codex",
-      "Prompt Engineering", "AI-augmented workflows",
-    ],
-  },
-];
-
-const certifications = [
-  {
-    name: "AWS Certified Solutions Architect – Associate",
-    issuer: "Amazon Web Services",
-    date: "Feb 2022",
-    accent: "#FF9900",
-    icon: "☁️",
-  },
-  {
-    name: "ThingWorx Professional Certification",
-    issuer: "PTC University",
-    date: "Aug 2021",
-    accent: "#0066CC",
-    icon: "🔗",
-  },
-  {
-    name: "Windchill Administration, Customization & Advanced Configuration",
-    issuer: "PTC",
-    date: "Ongoing",
-    accent: "#00A9E0",
-    icon: "⚙️",
-  },
-  {
-    name: "Scrum Development with Jira & JIRA Agile",
-    issuer: "Pluralsight",
-    date: "Jun 2022",
-    accent: "#F15B2A",
-    icon: "🔄",
-  },
-];
-
-const assessed = ["JavaScript", "Java", "REST APIs", "Git"];
+import { usePortfolio } from "../../hooks/usePortfolio";
 
 const Skills = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
 
+  const portfolio = usePortfolio();
+  const section = portfolio?.skills ?? {};
+  const { kv = {}, subsections = {}, json: certifications = [] } = section;
+
+  // Skill groups come from ### subsections; bullets are the individual skills
+  const skillGroups = Object.entries(subsections).map(([label, sub]) => ({
+    label,
+    accent:  sub.kv?.accent  ?? '#EEE',
+    note:    sub.kv?.note,
+    wide:    sub.kv?.wide === 'true',
+    skills:  sub.bullets,
+  }));
+
+  // LinkedIn assessments are a comma-separated kv field
+  const assessed = (kv.assessments ?? '').split(', ').filter(Boolean);
+
   return (
     <div className="skills-section" id="skills">
       <div className="skills-heading">
-        <span style={{ color: darkMode ? "white" : "" }}>Skills &amp;</span>
-        <span>Certifications</span>
+        <span style={{ color: darkMode ? "white" : "" }}>{kv.heading1 ?? 'Skills &'}</span>
+        <span>{kv.heading2 ?? 'Certifications'}</span>
       </div>
 
       {/* skill category grid */}
@@ -109,7 +36,7 @@ const Skills = () => {
         {skillGroups.map((group, gi) => (
           <motion.div
             key={gi}
-            className={`skill-category${group.label === "AI Development" ? " skill-category--wide" : ""}`}
+            className={`skill-category${group.wide ? " skill-category--wide" : ""}`}
             style={{
               background: darkMode ? "#1a1a1a" : "white",
               borderTopColor: group.accent === "#fde8d8" ? "var(--orange)" : group.accent,
@@ -148,58 +75,62 @@ const Skills = () => {
         ))}
       </div>
 
-      {/* certifications */}
-      <div className="certs-section">
-        <span
-          className="certs-title"
-          style={{ color: darkMode ? "white" : "" }}
-        >
-          Certifications
-        </span>
-        <div className="certs-grid">
-          {certifications.map((cert, i) => (
-            <motion.div
-              key={i}
-              className="cert-card"
-              style={{ background: darkMode ? "#1a1a1a" : "white" }}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-            >
-              <span className="cert-icon">{cert.icon}</span>
-              <div className="cert-body">
-                <span
-                  className="cert-name"
-                  style={{ color: darkMode ? "white" : "" }}
-                >
-                  {cert.name}
-                </span>
-                <span className="cert-meta">
-                  <span style={{ color: cert.accent, fontWeight: 600 }}>
-                    {cert.issuer}
-                  </span>{" "}
-                  · {cert.date}
-                </span>
-              </div>
-            </motion.div>
-          ))}
+      {/* certifications — from JSON block */}
+      {certifications.length > 0 && (
+        <div className="certs-section">
+          <span
+            className="certs-title"
+            style={{ color: darkMode ? "white" : "" }}
+          >
+            Certifications
+          </span>
+          <div className="certs-grid">
+            {certifications.map((cert, i) => (
+              <motion.div
+                key={i}
+                className="cert-card"
+                style={{ background: darkMode ? "#1a1a1a" : "white" }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+              >
+                <span className="cert-icon">{cert.icon}</span>
+                <div className="cert-body">
+                  <span
+                    className="cert-name"
+                    style={{ color: darkMode ? "white" : "" }}
+                  >
+                    {cert.name}
+                  </span>
+                  <span className="cert-meta">
+                    <span style={{ color: cert.accent, fontWeight: 600 }}>
+                      {cert.issuer}
+                    </span>{" "}
+                    · {cert.date}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* LinkedIn assessments */}
-      <div className="assessed-section">
-        <span style={{ color: darkMode ? "#aaa" : "var(--gray)" }}>
-          LinkedIn Skill Assessments Passed:
-        </span>
-        <div className="skill-pills">
-          {assessed.map((a, i) => (
-            <span key={i} className="skill-pill assessed-pill">
-              ✓ {a}
-            </span>
-          ))}
+      {assessed.length > 0 && (
+        <div className="assessed-section">
+          <span style={{ color: darkMode ? "#aaa" : "var(--gray)" }}>
+            LinkedIn Skill Assessments Passed:
+          </span>
+          <div className="skill-pills">
+            {assessed.map((a, i) => (
+              <span key={i} className="skill-pill assessed-pill">
+                ✓ {a}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

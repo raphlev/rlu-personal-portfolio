@@ -13,34 +13,41 @@ import Instagram from "../../img/instagram.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-const Intro = () => {
-  // Transition
-  const transition = { duration: 2, type: "spring" };
+import { usePortfolio } from "../../hooks/usePortfolio";
 
-  // context
+const Intro = () => {
+  const transition = { duration: 2, type: "spring" };
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
+
+  const portfolio = usePortfolio();
+  const kv = portfolio?.intro?.kv ?? {};
+
+  const greeting    = kv.greeting    ?? 'Hello, I Am';
+  const name        = kv.name        ?? 'Raphael Leveque';
+  const title       = kv.title       ?? '';
+  const badge       = kv.badge       ?? 'Currently upskilling';
+  const badgeDetail = kv.badgeDetail ?? '';
+  const ctaLabel    = kv.ctaLabel    ?? 'Get in Touch';
+
+  const [b1text1, b1text2] = (kv.floatingBadge1 ?? 'Web · Developer').split(' · ');
+  const [b2text1, b2text2] = (kv.floatingBadge2 ?? 'Best Design · Award').split(' · ');
 
   return (
     <div className="Intro" id="Intro">
       {/* left name side */}
       <div className="i-left">
         <div className="i-name">
-          <span style={{ color: darkMode ? "white" : "" }}>Hello, I Am</span>
-          <span>Raphael Leveque</span>
-          <span>
-            PLM Windchill Principal Architect with 25+ years driving digital
-            transformation across Aerospace &amp; Defense, Automotive, and
-            Industrial sectors. Bridging PLM, Cloud, IoT — and now AI-driven
-            development.
-          </span>
+          <span style={{ color: darkMode ? "white" : "" }}>{greeting}</span>
+          <span>{name}</span>
+          <span>{title}</span>
         </div>
         <div className="i-current-focus" style={{ color: darkMode ? "white" : "var(--black)" }}>
-          <span className="i-focus-badge">Currently upskilling</span>
-          &nbsp;AWS Cloud Architecture · AI-driven dev with Claude&nbsp;Code, Kiro &amp; Codex
+          <span className="i-focus-badge">{badge}</span>
+          &nbsp;{badgeDetail}
         </div>
         <Link to="contact" smooth={true} spy={true}>
-          <button className="button i-button">Get in Touch</button>
+          <button className="button i-button">{ctaLabel}</button>
         </Link>
         {/* social icons */}
         <div className="i-icons">
@@ -53,7 +60,7 @@ const Intro = () => {
       <div className="i-right">
         <img src={Vector1} alt="" aria-hidden="true" />
         <img src={Vector2} alt="" aria-hidden="true" />
-        <img src={boy} alt="Andrew Thomas" />
+        <img src={boy} alt={name} />
         {/* animation */}
         <motion.img
           initial={{ left: "-36%" }}
@@ -70,18 +77,16 @@ const Intro = () => {
           transition={transition}
           className="floating-div"
         >
-          <FloatinDiv img={crown} text1="Web" text2="Developer" />
+          <FloatinDiv img={crown} text1={b1text1} text2={b1text2} />
         </motion.div>
 
-        {/* animation */}
         <motion.div
           initial={{ left: "9rem", top: "18rem" }}
           whileInView={{ left: "0rem" }}
           transition={transition}
           className="floating-div"
         >
-          {/* floatinDiv mein change hy dark mode ka */}
-          <FloatinDiv img={thumbup} text1="Best Design" text2="Award" />
+          <FloatinDiv img={thumbup} text1={b2text1} text2={b2text2} />
         </motion.div>
 
         <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>
