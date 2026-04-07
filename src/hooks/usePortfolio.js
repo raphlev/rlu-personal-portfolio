@@ -141,7 +141,7 @@ export function usePortfolio() {
           if (!r.ok) throw new Error(`Failed to load portfolio.md: ${r.status}`);
           return r.text();
         })
-        .then(text => { _cache = parse(text); return _cache; })
+        .then(text => { _cache = parse(text.replace(/\r\n/g, '\n')); return _cache; })
         .catch(err => {
           console.error(err);
           _promise = null; // allow retry on next mount
