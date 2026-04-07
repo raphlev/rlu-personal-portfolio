@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "D:\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\RaphL\\AppData\\Roaming\\npm\\node_modules\\@playwright\\mcp\\cli.js",
+        "--config",
+        "C:\\Users\\RaphL\\playwright-mcp-config.json"
+      ]
+    }
+  }
+}
