@@ -16,7 +16,7 @@ Claude Code uses three separate files for MCP servers — understanding which do
 
 ---
 
-## Approach A — Interactive (simplest, works everywhere)
+## Approach A — Interactive (not recommended)
 
 Run this once per project from the terminal inside the project folder:
 
@@ -36,7 +36,7 @@ Verify with `/mcp` in chat — should show `playwright ● Connected`.
 
 ---
 
-## Approach B — Manual files (explicit, portable, replicable)
+## Approach B — Manual files (explicit, portable, replicable, recommnded approach)
 
 Use this when you want the configuration checked into the project or shared with a team.
 
@@ -82,7 +82,7 @@ Edit **`C:\Users\<you>\.claude\settings.json`**:
 }
 ```
 
-Find your node path:
+Find your node path using cmd window:
 
 ```cmd
 where node
@@ -109,6 +109,12 @@ The VS Code extension reads MCP servers from **`<project_workspace>\.mcp.json`**
     }
   }
 }
+```
+
+Find your node path using cmd window:
+
+```cmd
+where node
 ```
 
 ---
