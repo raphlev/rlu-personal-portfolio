@@ -2,70 +2,38 @@ import { useContext } from "react";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import "./Portfolio.css";
-
-const featured = [
-  {
-    icon: "🏭",
-    client: "Fayat Group",
-    context: "TTPSC · 2025 – Present",
-    type: "Windchill Multi-Site Architecture",
-    achievement:
-      "Led full solution architecture across 10 industrial sites and 2 distinct Windchill instances — covering Multi-CAD integration, BOM Engineering, Variant Design, ERP integrations and data migrations over a 2-year delivery roadmap.",
-    tags: ["Windchill", "BOM", "Multi-CAD", "ERP Integration", "Migration"],
-  },
-  {
-    icon: "✈️",
-    client: "Airbus",
-    context: "Capgemini · 2022",
-    type: "AWS Cloud Architecture",
-    achievement:
-      "Defined to-be AWS cloud architecture for the PASS SSI Bundle migration — addressing enterprise-scale security hardening, identity management and multi-region disaster recovery.",
-    tags: ["AWS", "Cloud Migration", "Security", "Disaster Recovery"],
-  },
-  {
-    icon: "🛡️",
-    client: "Thales",
-    context: "PTC · 2013 – 2022",
-    type: "PLM Platform Delivery",
-    achievement:
-      "Multi-year Windchill architecture and delivery for Thales — recognised with PTC's 'Customer First' award for quality, precision and responsiveness. Included CAD integration, LSA and S1000D solution design.",
-    tags: ["Windchill", "CAD Integration", "LSA", "S1000D", "A&D"],
-  },
-  {
-    icon: "🚀",
-    client: "Dassault Aviation",
-    context: "Dassault Systèmes · 2000 – 2005",
-    type: "PLM Document Management",
-    achievement:
-      "Customised SmarTeam as the enterprise document management system for Dassault Aviation's Design Office — used on the Mirage 2000-9 and Rafale fighter aircraft programs.",
-    tags: ["SmarTeam", "VBA", "Oracle", "Rafale", "Aerospace"],
-  },
-  {
-    icon: "⭐",
-    client: "PTC · Key Responsibilities & Achievements",
-    context: "2008 – 2022 · 14 years",
-    type: "Senior Windchill PLM Architect — Cross-cutting highlights",
-    wide: true,
-    bullets: [
-      "Subject-matter expert CAD Integration (member of CATIA BOCA team with R&D), Architecture Design, PLM Solution Design, LSA (S3000L)",
-      "Development Technical Lead managing teams of 1 to 5 developers on average",
-      "Customer-facing workshops for requirement analysis and solution design review",
-      "Trusted advisor for Kingfisher for Windchill interface (REST) with SAP",
-      "Awarded Thales delivery with 'Customer First' mention: quality, precision, reactivity on bug fixing, dev team management",
-      "Conducted training sessions for customers in Australia",
-    ],
-    tags: ["Windchill", "CAD Integration", "LSA S3000L", "SAP / REST", "Team Lead", "A&D"],
-  },
-];
+import { usePortfolio } from "../../hooks/usePortfolio";
 
 const Portfolio = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
 
+  const portfolio = usePortfolio();
+  const port = portfolio?.portfolio ?? {};
+  const { kv = {}, subsections = {} } = port;
+
+  // Each ### subsection name is "ICON client name"; kv holds context/type/achievement/tags/wide
+  const featured = Object.entries(subsections).map(([fullName, sub]) => {
+    // Split icon (first non-space token) from client name
+    const spaceIdx = fullName.indexOf(' ');
+    const icon   = spaceIdx === -1 ? fullName : fullName.slice(0, spaceIdx);
+    const client = spaceIdx === -1 ? fullName : fullName.slice(spaceIdx + 1);
+    return {
+      icon,
+      client,
+      context:     sub.kv?.context ?? '',
+      type:        sub.kv?.type ?? '',
+      achievement: sub.kv?.achievement,
+      wide:        sub.kv?.wide === 'true',
+      bullets:     sub.bullets,
+      tags:        sub.kv?.tags ? sub.kv.tags.split(', ') : [],
+    };
+  });
+
   return (
     <div className="portfolio" id="portfolio">
-      <span style={{ color: darkMode ? "white" : "" }}>Key</span>
-      <span>Engagements</span>
+      <span style={{ color: darkMode ? "white" : "" }}>{kv.heading1 ?? 'Key'}</span>
+      <span>{kv.heading2 ?? 'Engagements'}</span>
 
       <div className="featured-grid">
         {featured.map((item, index) => (
@@ -99,7 +67,7 @@ const Portfolio = () => {
               <p className="featured-achievement">{item.achievement}</p>
             )}
 
-            {item.bullets && (
+            {item.bullets && item.bullets.length > 0 && (
               <ul className="featured-bullets">
                 {item.bullets.map((b, i) => (
                   <li key={i} style={{ color: darkMode ? "#ccc" : "" }}>{b}</li>
