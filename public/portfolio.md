@@ -294,6 +294,29 @@ Safran · Eurocopter · Aerolia · Velux
           "Web: Javascript, HTML, CSS, node.js, React, SSL, Security, OAuth",
           "Cloud: AWS EC2 & S3 & CLI, Azure IoT Hub"
         ]
+      },
+      {
+        "title": "Projects description list",
+        "items": [
+          "2021-2022 | Technical Architect | Volvo GTT – Sweden (5 months, remote): Validated Associative Topology Bus (ATB) module for Heterogeneous Design In Context (HDIC) between Creo Parametric and CATIA within Windchill PDMLink — enabling Volvo visualization use cases across heterogeneous CAD environments.",
+          "2020-2021 | Solution Architect | Thales Paris (6 months, remote): Delivered LSA Advanced module — Windchill customization based on MPMLink BOM structure with new Excel import/export functionalities. Development Technical Lead with Polish Solution Center (3 developers).",
+          "2020 | Cloud Architect | Hasbro (3 months, remote): Managed AWS cloud server installations, server sizing and configuration across dev/test/pre-prod/prod environments for Windchill Rehost with LDAP/ADS integration.",
+          "2019-2020 | Technical & Solution Architect | Mars Wrigley (Netherlands) and SNCF Réseau (Paris) (3 months, remote): Architecture design and implementation of Windchill PDMLink & CAD Integrations; managed CAD/PDF publication (CAD Workers) and full server sizing & configuration — On-Premises (SNCF) and Cloud (Mars).",
+          "2019 | PLM Technical Architect | Hitachi Rail – Italy (1 month, remote & onsite): Led sprint to define User Stories for internal/external collaboration via Windchill ProjectLink; configured access permissions, object sharing and Add-to-Project flows; contributed to external-user architecture design.",
+          "2018-2019 | PLM Technical Architect & Scrum Master | Velux – Denmark (10 months, remote): Took over Windchill PDMLink & CAD Integrations for maintenance phase; Development Technical Lead with Polish Solution Center; piloted integration with Integrity Lifecycle Management (Navigate, Manage Traces, ThingWorx).",
+          "2018-2019 | Customer Support & Mentoring | Thales Australia (4 weeks, onsite): Delivered LSA deployment support — installation, configuration, training and on-site mentoring on the VRD Logistics Support Analysis (LSA) module for key users.",
+          "2017-2018 | Cloud & Solution Architect | Kingfisher – London UK (1 year, 30% onsite): PLM-to-SAP and LDAP integration for Windchill Retail FlexPLM; implemented corporate LDAP/SSO/SSL and defined AWS cloud environment; Technical Lead with ITC India partner. Tech: FlexPLM, Java EE, REST Web Services, SFTP, Oracle, Linux, AWS.",
+          "2013-2017 | PLM Technical Architect | Thales and Volvo RTD – Paris (16 months, remote): Implemented Windchill 10 for Logistical Support Analysis (LSA) data model integrating S3000L standard across PDMLink and MPMLink; Technical Lead with PSC developers (1–4).",
+          "2013-2017 | Development Engineer | Snecma – Paris (10 months, remote): Developed new Technical Document management features in Windchill 10 to S1000D standard, customizing PLMLink with S1000D business objects (SLM).",
+          "2013-2017 | Solution Architect | Airbus – Toulouse (1 month): Designed and deployed Windchill 10 with Creo Parametric CAD Integration for Packaging Design Framework (EYYL); covered installation, workflows, lifecycle, visualization services and Linux deployment.",
+          "2013-2017 | Solution Architect | Turbomeca – Pau (1 month, 25% onsite): Analyzed existing Windchill 9.1 + CATIA/CADDS integration; evaluated gaps vs Windchill 10; proposed improved CAD integration solution covering synchronization, BOM associativity and configured workspace.",
+          "2013-2017 | Application Architect & Development Engineer | Richemont – Switzerland (15 months, 30% onsite): Implemented Manufacturing process with SAP interface and Process Plan/Work Instruction management (MPMLink – Windchill 10); customized I*E tasks, JSP, Cognos, Server Listener, Client MVC tables, types and layouts.",
+          "2008-2012 | Process Architect | MBDA – France (3 months, 25% onsite): Led requirement analysis workshops for Windchill 10 migration from Teamcenter, covering MCAD/ECAD, Part/Product, Change & Configuration Management, Component Management; built ECAD integration test environment with Zuken.",
+          "2008-2012 | Application Architect & Development Engineer | Navantia – Spain (6 months, 30% onsite): Prototyped ship building EBOM (System, Functional, Geographic, Constructive structures) with Foran CAD integration, Release Process, Advanced Configuration Management (Effectivity, Options & Variants) and Change Process in Windchill 10.",
+          "2008-2012 | Solution Architect | Saft – France (1 week): Installed and configured Adobe LiveCycle Watermark/Coversheet in Windchill 10; demonstrated Document Review management best practices; delivered a quick customized publishing solution.",
+          "2008-2012 | Process & Functional Architect | Aerolia – France (2 years, Toulouse): Full PLM architecture lifecycle — concept (process redesign for Engineering, DMU, Change & Config), definition (detailed spec for Windchill 10 + CATIA V5 CAD Integration, Visualization, Clash management), verification (Change & Config, DMU CAD Integration test dossiers), and adoption (training and workshops for key users).",
+          "2008-2012 | Various Projects – France (2 years): Airbus EADS (functional lead for Equipment/System PDMLink, CAD management, Jig & Tools MDM-R) · Araymond (multi-CAD Heterogeneous Design Context — Creo/CATIA/NX) · Beneteau (Windchill–CATIA V5 integration audit) · Eurocopter (FMEA/MSG-3 reliability solution via Windchill Quality, technical architect) · Airbus (Phenix Change — CATIA V5 WGM customization) · Airbus (Flexible Parts, Design in Context, multi-Effectivity audit)."
+        ]
       }
     ]
   },
